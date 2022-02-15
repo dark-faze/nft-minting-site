@@ -5,7 +5,8 @@ import "./styles/App.css";
 
 const App = () => {
   const [currentAccount, setCurrentAccount] = useState("");
-
+  const CONTRACT_ADDRESS = "0x9D9D8A5b5000C7dcBA16477F991CB3A0D650dbc9";
+  
   const checkIfWalletIsConnected = async () => {
     const { ethereum } = window;
 
@@ -56,7 +57,6 @@ const App = () => {
   };
   
   const askContractToMintNft = async () => {
-    const CONTRACT_ADDRESS = "0x9D9D8A5b5000C7dcBA16477F991CB3A0D650dbc9";
 
     try {
       const { ethereum } = window;
@@ -123,7 +123,13 @@ const App = () => {
             </button>
           )}
         </div>
-        <div className="footer-container"></div>
+        <div className="footer-container">
+          <a
+            href={`https://ropsten.rarible.com/collection/${CONTRACT_ADDRESS}/items`}
+          >
+            View collection on Rarible
+          </a>
+        </div>
       </div>
     </div>
   );
